@@ -21,7 +21,7 @@ stages:
             containerRegistry: dockerserviceconnection1
             repository: kharatramesh/vadapavimages
             tags: |
-                azuredemo1
+                azuredemo2
 
 
           
