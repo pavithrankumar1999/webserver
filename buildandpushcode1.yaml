@@ -1,0 +1,28 @@
+## testing sample pipeline
+trigger:
+- master
+- main
+resources:
+- repo: self
+
+stages:
+  - stage: Build Code
+    displayName: Build 
+    jobs:
+    - job: build
+      displayName: Build
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+        - task: Docker@2
+          displayName: buildAndPush
+          inputs:
+            command: buildAndPush
+            containerRegistry: dockerserviceconnection1
+            repository: kharatramesh/vadapavimages
+            tags: |
+                azuredemo1
+
+
+          
+  
